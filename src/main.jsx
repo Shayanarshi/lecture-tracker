@@ -59,11 +59,12 @@ const lessons = [
 
 const STORAGE_KEY = "sbwms-lecture-progress-v1";
 const dayDescriptions = {
-  1: "Build your momentum",
-  2: "Keep the consistency",
-  3: "You're halfway there",
-  4: "Almost at the finish line",
-  5: "Finish strong",
+  1: "Start strong — 3 lectures",
+  2: "Build your momentum",
+  3: "Keep the consistency",
+  4: "Stay on track",
+  5: "Almost at the finish line",
+  6: "Finish strong",
 };
 
 function readProgress() {
@@ -133,7 +134,7 @@ function App() {
   }, [query, filter, activeDay, completed]);
 
   const groupedLessons = useMemo(() => {
-    return [1, 2, 3, 4, 5]
+    return [1, 2, 3, 4, 5, 6]
       .map((day) => ({
         day,
         lessons: visibleLessons.filter((lesson) => lesson.day === day),
@@ -199,7 +200,7 @@ function App() {
           <div className="min-w-0">
             <div className="course-small">CURRENT COURSE</div>
             <div className="course-title">SBWMS · Shekher</div>
-            <div className="course-subtitle">30 lectures remaining</div>
+            <div className="course-subtitle">{remainingCount} lectures remaining</div>
           </div>
         </div>
         <div className="sidebar-bottom">
@@ -224,10 +225,10 @@ function App() {
               <div className="eyebrow"><Flame size={15} /> YOUR LEARNING JOURNEY</div>
               <h1>Keep your momentum going.</h1>
               <p className="welcome-copy">
-                One lecture at a time. You're working toward completing your SBWMS course in five days.
+                One lecture at a time. Complete your SBWMS course from 16–21 October 2026.
               </p>
             </div>
-            <div className="target-pill"><CalendarDays size={16} /> 5-day completion plan</div>
+            <div className="target-pill"><CalendarDays size={16} /> 6-day completion plan</div>
           </section>
 
           <section className="hero-card">
@@ -264,7 +265,7 @@ function App() {
             <StatCard icon={<CheckCircle2 size={19} />} label="Completed" value={completedCount} note="Great progress" tone="green" />
             <StatCard icon={<BookOpen size={19} />} label="Remaining" value={remainingCount} note="Keep it moving" tone="blue" />
             <StatCard icon={<Clock3 size={19} />} label="Video time left" value={formatDuration(remainingMinutes)} note={`${formatDuration(totalMinutes)} total course time`} tone="violet" />
-            <StatCard icon={<Target size={19} />} label="Your target" value="5 days" note="A little every session" tone="amber" />
+            <StatCard icon={<Target size={19} />} label="Your target" value="6 days" note="16–21 Oct 2026" tone="amber" />
           </section>
 
           <section className="content-grid">
@@ -302,7 +303,7 @@ function App() {
 
               <div className="day-tabs" aria-label="Filter by study day">
                 <button className={activeDay === "all" ? "day-tab active" : "day-tab"} onClick={() => setActiveDay("all")}>All days</button>
-                {[1, 2, 3, 4, 5].map((day) => (
+                {[1, 2, 3, 4, 5, 6].map((day) => (
                   <button key={day} className={activeDay === String(day) ? "day-tab active" : "day-tab"} onClick={() => setActiveDay(String(day))}>Day {day}</button>
                 ))}
               </div>
@@ -395,10 +396,10 @@ function App() {
 
               <section className="routine-card">
                 <div className="routine-heading"><Target size={18} /><h3>Daily target</h3></div>
-                <div className="routine-big">6 <span>lectures / day</span></div>
-                <p>Stay steady with your five-day plan. Tick off each lesson to see your progress update.</p>
+                <div className="routine-big">3–6 <span>lectures / day</span></div>
+                <p>Follow your six-day plan from 16–21 October. Day 1 has 3 lectures; the remaining days have 5–6 each.</p>
                 <div className="routine-days">
-                  {[1, 2, 3, 4, 5].map((day) => {
+                  {[1, 2, 3, 4, 5, 6].map((day) => {
                     const dayLessons = lessons.filter((lesson) => lesson.day === day);
                     const count = dayLessons.filter((lesson) => completed.has(lesson.number)).length;
                     const done = count === dayLessons.length;
@@ -416,7 +417,7 @@ function App() {
           </section>
 
           <footer className="app-footer">
-            <span><span className="footer-dot" /> Your progress saves automatically in this browser.</span>
+            <span><span className="footer-dot" /> Progress saves in this browser only (not synced across devices).</span>
             <span>Built for your learning journey <span className="footer-heart">♥</span></span>
           </footer>
         </div>
