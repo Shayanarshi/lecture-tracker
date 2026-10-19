@@ -171,7 +171,7 @@ function App() {
 
   function exportProgress() {
     const data = {
-      course: "91-SBWMS-11AM-20-May-26-Shekher",
+      course: "Spring Boot Mastery — 10-Day Learning Sprint",
       exportedAt: new Date().toISOString(),
       completedLectures: [...completed].sort((a, b) => a - b),
       remainingLectures: lessons
@@ -216,9 +216,9 @@ function App() {
         <div className="sidebar-course">
           <div className="course-icon"><BookOpen size={18} /></div>
           <div className="min-w-0">
-            <div className="course-small">CURRENT COURSE</div>
-            <div className="course-title">SBWMS · Shekher</div>
-            <div className="course-subtitle">{remainingCount} lectures remaining</div>
+            <div className="course-small">YOUR LEARNING PATH</div>
+            <div className="course-title">Spring Boot Mastery</div>
+            <div className="course-subtitle">10-day learning sprint</div>
           </div>
         </div>
         <div className="sidebar-bottom">
@@ -252,8 +252,8 @@ function App() {
           <section className="hero-card">
             <div className="hero-content">
               <div className="hero-label"><span className="hero-dot" /> COURSE OVERVIEW</div>
-              <h2>SBWMS · Shekher</h2>
-              <p>91-SBWMS-11AM-20-May-26-Shekher</p>
+              <h2>Spring Boot Mastery</h2>
+              <p>Build skills. One lecture at a time.</p>
               <div className="hero-progress-heading">
                 <span>Overall completion</span>
                 <strong>{progress}%</strong>
