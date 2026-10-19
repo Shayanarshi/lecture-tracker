@@ -20,51 +20,69 @@ import {
 import "./styles.css";
 
 const lessons = [
+  // Day 1 — 16 October: 3 videos
   { number: 71, date: "16-Oct-26", duration: "55:53", day: 1 },
   { number: 72, date: "16-Oct-26", duration: "74:37", day: 1 },
   { number: 73, date: "16-Oct-26", duration: "71:49", day: 1 },
 
+  // Day 2 — 17 October: 2 videos
   { number: 74, date: "17-Oct-26", duration: "69:18", day: 2 },
   { number: 75, date: "17-Oct-26", duration: "76:54", day: 2 },
-  { number: 76, date: "17-Oct-26", duration: "70:09", day: 2 },
-  { number: 78, date: "17-Oct-26", duration: "72:20", day: 2 },
-  { number: 79, date: "17-Oct-26", duration: "74:26", day: 2 },
-  { number: 80, date: "17-Oct-26", duration: "52:52", day: 2 },
 
-  { number: 81, date: "18-Oct-26", duration: "61:14", day: 3 },
-  { number: 82, date: "18-Oct-26", duration: "76:40", day: 3 },
-  { number: 83, date: "18-Oct-26", duration: "82:17", day: 3 },
-  { number: 84, date: "18-Oct-26", duration: "70:52", day: 3 },
-  { number: 85, date: "18-Oct-26", duration: "72:58", day: 3 },
+  // Day 3 — 18 October: 4 videos (lecture 77 was not in the supplied list)
+  { number: 76, date: "18-Oct-26", duration: "70:09", day: 3 },
+  { number: 78, date: "18-Oct-26", duration: "72:20", day: 3 },
+  { number: 79, date: "18-Oct-26", duration: "74:26", day: 3 },
+  { number: 80, date: "18-Oct-26", duration: "52:52", day: 3 },
 
-  { number: 86, date: "19-Oct-26", duration: "60:33", day: 4 },
-  { number: 87, date: "19-Oct-26", duration: "69:23", day: 4 },
-  { number: 88, date: "19-Oct-26", duration: "70:44", day: 4 },
-  { number: 89, date: "19-Oct-26", duration: "54:39", day: 4 },
-  { number: 90, date: "19-Oct-26", duration: "59:29", day: 4 },
-  { number: 91, date: "19-Oct-26", duration: "66:31", day: 4 },
+  // Day 4 — 19 October: 3 videos
+  { number: 81, date: "19-Oct-26", duration: "61:14", day: 4 },
+  { number: 82, date: "19-Oct-26", duration: "76:40", day: 4 },
+  { number: 83, date: "19-Oct-26", duration: "82:17", day: 4 },
 
-  { number: 92, date: "20-Oct-26", duration: "61:29", day: 5 },
-  { number: 93, date: "20-Oct-26", duration: "70:56", day: 5 },
-  { number: 94, date: "20-Oct-26", duration: "70:43", day: 5 },
-  { number: 95, date: "20-Oct-26", duration: "66:21", day: 5 },
-  { number: 96, date: "20-Oct-26", duration: "61:23", day: 5 },
+  // Day 5 — 20 October: 3 videos
+  { number: 84, date: "20-Oct-26", duration: "70:52", day: 5 },
+  { number: 85, date: "20-Oct-26", duration: "72:58", day: 5 },
+  { number: 86, date: "20-Oct-26", duration: "60:33", day: 5 },
 
-  { number: 97, date: "21-Oct-26", duration: "61:30", day: 6 },
-  { number: 98, date: "21-Oct-26", duration: "73:50", day: 6 },
-  { number: 99, date: "21-Oct-26", duration: "61:22", day: 6 },
-  { number: 100, date: "21-Oct-26", duration: "58:10", day: 6 },
-  { number: 101, date: "21-Oct-26", duration: "73:24", day: 6 },
+  // Day 6 — 21 October: 3 videos
+  { number: 87, date: "21-Oct-26", duration: "69:23", day: 6 },
+  { number: 88, date: "21-Oct-26", duration: "70:44", day: 6 },
+  { number: 89, date: "21-Oct-26", duration: "54:39", day: 6 },
+
+  // Day 7 — 22 October: 3 videos
+  { number: 90, date: "22-Oct-26", duration: "59:29", day: 7 },
+  { number: 91, date: "22-Oct-26", duration: "66:31", day: 7 },
+  { number: 92, date: "22-Oct-26", duration: "61:29", day: 7 },
+
+  // Day 8 — 23 October: 3 videos
+  { number: 93, date: "23-Oct-26", duration: "70:56", day: 8 },
+  { number: 94, date: "23-Oct-26", duration: "70:43", day: 8 },
+  { number: 95, date: "23-Oct-26", duration: "66:21", day: 8 },
+
+  // Day 9 — 24 October: 3 videos
+  { number: 96, date: "24-Oct-26", duration: "61:23", day: 9 },
+  { number: 97, date: "24-Oct-26", duration: "61:30", day: 9 },
+  { number: 98, date: "24-Oct-26", duration: "73:50", day: 9 },
+
+  // Day 10 — 25 October: 3 videos
+  { number: 99, date: "25-Oct-26", duration: "61:22", day: 10 },
+  { number: 100, date: "25-Oct-26", duration: "58:10", day: 10 },
+  { number: 101, date: "25-Oct-26", duration: "73:24", day: 10 },
 ];
 
 const STORAGE_KEY = "sbwms-lecture-progress-v1";
 const dayDescriptions = {
-  1: "Start strong — 3 lectures",
-  2: "Build your momentum",
-  3: "Keep the consistency",
-  4: "Stay on track",
-  5: "Almost at the finish line",
-  6: "Finish strong",
+  1: "Start strong · 3 videos",
+  2: "A lighter day · 2 videos",
+  3: "Big momentum day · 4 videos",
+  4: "Build consistency · 3 videos",
+  5: "Keep your rhythm · 3 videos",
+  6: "Stay focused · 3 videos",
+  7: "More than halfway · 3 videos",
+  8: "Keep the streak going · 3 videos",
+  9: "Almost there · 3 videos",
+  10: "Finish strong · 3 videos",
 };
 
 function readProgress() {
@@ -134,7 +152,7 @@ function App() {
   }, [query, filter, activeDay, completed]);
 
   const groupedLessons = useMemo(() => {
-    return [1, 2, 3, 4, 5, 6]
+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
       .map((day) => ({
         day,
         lessons: visibleLessons.filter((lesson) => lesson.day === day),
@@ -225,10 +243,10 @@ function App() {
               <div className="eyebrow"><Flame size={15} /> YOUR LEARNING JOURNEY</div>
               <h1>Keep your momentum going.</h1>
               <p className="welcome-copy">
-                One lecture at a time. Complete your SBWMS course from 16–21 October 2026.
+                One lecture at a time. Follow your 10-day study plan from 16–25 October 2026.
               </p>
             </div>
-            <div className="target-pill"><CalendarDays size={16} /> 6-day completion plan</div>
+            <div className="target-pill"><CalendarDays size={16} /> 16–25 Oct 2026 · 10 study days</div>
           </section>
 
           <section className="hero-card">
@@ -265,7 +283,7 @@ function App() {
             <StatCard icon={<CheckCircle2 size={19} />} label="Completed" value={completedCount} note="Great progress" tone="green" />
             <StatCard icon={<BookOpen size={19} />} label="Remaining" value={remainingCount} note="Keep it moving" tone="blue" />
             <StatCard icon={<Clock3 size={19} />} label="Video time left" value={formatDuration(remainingMinutes)} note={`${formatDuration(totalMinutes)} total course time`} tone="violet" />
-            <StatCard icon={<Target size={19} />} label="Your target" value="6 days" note="16–21 Oct 2026" tone="amber" />
+            <StatCard icon={<Target size={19} />} label="Your target" value="10 days" note="Updated study plan" tone="amber" />
           </section>
 
           <section className="content-grid">
@@ -303,7 +321,7 @@ function App() {
 
               <div className="day-tabs" aria-label="Filter by study day">
                 <button className={activeDay === "all" ? "day-tab active" : "day-tab"} onClick={() => setActiveDay("all")}>All days</button>
-                {[1, 2, 3, 4, 5, 6].map((day) => (
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((day) => (
                   <button key={day} className={activeDay === String(day) ? "day-tab active" : "day-tab"} onClick={() => setActiveDay(String(day))}>Day {day}</button>
                 ))}
               </div>
@@ -313,12 +331,14 @@ function App() {
                   const finished = dayLessons.filter((lesson) => completed.has(lesson.number)).length;
                   const actualDayTotal = lessons.filter((lesson) => lesson.day === day).length;
                   const actualDayDone = lessons.filter((lesson) => lesson.day === day && completed.has(lesson.number)).length;
+                  const dayDates = [...new Set(lessons.filter((lesson) => lesson.day === day).map((lesson) => lesson.date))].join(" · ");
                   return (
                     <section className="day-group" key={day}>
                       <div className="day-heading">
                         <div className="day-number">{String(day).padStart(2, "0")}</div>
                         <div className="day-title-block">
                           <h3>Day {day} <span>{dayDescriptions[day]}</span></h3>
+                          <p><CalendarDays size={13} style={{ display: "inline", verticalAlign: "-2px", marginRight: 4 }} />{dayDates}</p>
                           <p>{actualDayDone} of {actualDayTotal} lectures completed</p>
                         </div>
                         <div className="day-progress">
@@ -396,10 +416,10 @@ function App() {
 
               <section className="routine-card">
                 <div className="routine-heading"><Target size={18} /><h3>Daily target</h3></div>
-                <div className="routine-big">3–6 <span>lectures / day</span></div>
-                <p>Follow your six-day plan from 16–21 October. Day 1 has 3 lectures; the remaining days have 5–6 each.</p>
+                <div className="routine-big">2–4 <span>videos / day</span></div>
+                <p>30 videos across 10 days: 3 on Day 1, 2 on Day 2, 4 on Day 3, then 3 videos every day through Day 10.</p>
                 <div className="routine-days">
-                  {[1, 2, 3, 4, 5, 6].map((day) => {
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((day) => {
                     const dayLessons = lessons.filter((lesson) => lesson.day === day);
                     const count = dayLessons.filter((lesson) => completed.has(lesson.number)).length;
                     const done = count === dayLessons.length;
